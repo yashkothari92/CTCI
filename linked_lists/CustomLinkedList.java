@@ -63,6 +63,20 @@ public class CustomLinkedList<T> {
 		}
 	}
 	
+	public Node getNode(T data) {
+		Node current = head;
+		
+		while(current != null) {
+			if(current.data == data) {
+				return current;
+			}
+			else {
+				current = current.next;
+			}
+		}
+		return null;
+	}
+	
 	protected Node<T> getHead() {
 		return head;
 	}
