@@ -8,7 +8,7 @@ Chapter 1: Arrays & Strings
 
 1.3 URLify - replace string's white spaces with %20 (ignore trailing spaces)
 
-Chapter 2: Arrays & Strings
+Chapter 2: Linked Lists
 ----------------------------
 2.1 Remove Dups
 
