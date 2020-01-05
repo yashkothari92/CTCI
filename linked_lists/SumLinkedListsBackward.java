@@ -1,15 +1,15 @@
 package linked_lists;
 
-class PartialHolder {
-	Node sum = null;
-	int carry = 0;
-}
+// case 1: Linked List are stored in reverse order : 
+// 617 represented as 				7 -> 1 -> 6
+// 59 represented as 			         9 -> 5 // (9 -> 5 -> 0 ) * need to append 0 to align both LinkedLists 
+// Resultant linked list should be  6 -> 7 -> 6
+
 public class SumLinkedListsBackward {
 	static Node head;
 
 	public static void main(String[] args) {
 		CustomLinkedList<Integer> custll = new CustomLinkedList<Integer>();
-		// case 1: Linked List are stored in reverse order : 617 represented as 7 -> 1 > 6
 		
 		custll.add(7);
 		custll.add(1);
@@ -19,8 +19,9 @@ public class SumLinkedListsBackward {
 		System.out.println();
 		
 		CustomLinkedList<Integer> custll2 = new CustomLinkedList<Integer>();
-		custll2.add(5);
 		custll2.add(9);
+		custll2.add(7);
+		custll2.add(8);
 		//custll2.add(2);
 		Node custll2Head = custll2.getHead();
 		int custll2Size = custll2.getSize();
@@ -37,48 +38,7 @@ public class SumLinkedListsBackward {
 		}
 	}
 
-	private static Node addLinkedListForward(Node custLL1Node, Node custLL2Node) {
-		// find Lenght of each LinkedList 
-		int len1 = length(custLL1Node);
-		int len2 = length(custLL2Node);
-		
-		// pad shorter LinkedList with zeros()
-		if(len1 < len2) {
-			padListFront(custLL1Node, len2 - len1);
-		} else if(len2 < len1) {
-			padListFront(custLL2Node, len1 - len2);	
-		}
-		
-	//	addLinkedListFwd();
-		
-		PartialHolder holder = new PartialHolder();
-		int sum = 0;
-		
-		if (custLL1Node == null && custLL2Node == null) {
-			return holder.sum; 			//0
-		}
-			
-		int val =  holder.carry + (Integer)custLL1Node.data + (Integer)custLL2Node.data ;
-		addLinkedListForward(custLL1Node.next, custLL1Node.next);
-		
-		return null;
-	}
-	
-	private static Node padListFront(Node node, int i) {
-		while(i>0) {
-			node = insertBefore(node, 0);
-			i--;
-		}
-		return node;
-	}
-
-	private static Node insertBefore(Node node, int i) {
-		Node paddedNode = new Node(i);
-		paddedNode.next = node;
-		return paddedNode;
-	}
-
-	private static int length(Node node) {
+	public static int length(Node node) {
 		int counter = 0;
 		while (node != null) {
 			node = node.next;
@@ -112,9 +72,15 @@ public class SumLinkedListsBackward {
 			// store 'carry', and use it the same in next action 
 			if(val > 10) {
 				carry = val/10;
+			} else {
+				carry = 0;
 			}
 			custLL1Node = custLL1Node.next;
 			custLL2Node = custLL2Node.next;	
+		}
+		
+		if (carry > 0) {
+			appendNode(carry);
 		}
 		return head;		
 	}
