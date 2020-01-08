@@ -8,6 +8,14 @@ Chapter 1: Arrays & Strings
 
 1.3 URLify - replace string's white spaces with %20 (ignore trailing spaces)
 
+1.4 Palindrom Permutation
+
+1.5 One away
+
+1.6 String compression
+
+1.9 String Rotation
+
 
 Chapter 2: Linked Lists
 ----------------------------
