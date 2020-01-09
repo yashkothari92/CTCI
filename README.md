@@ -41,3 +41,10 @@ Chapter 16: Moderate
 16.2 Frequency for given word in a book
 
 16.6 Smallest Difference 
+
+16.8 English Integer
+
+16.15 MasterMind
+
+16.17 Contiguous Sequence
+
