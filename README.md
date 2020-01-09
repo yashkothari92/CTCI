@@ -32,3 +32,12 @@ Chapter 2: Linked Lists
 2.7 Intersection 
 
 2.8 Loop Detection
+
+Chapter 16: Moderate
+---------------------
+
+16.1 Number Swapper 
+
+16.2 Frequency for given word in a book
+
+16.6 Smallest Difference 
