@@ -8,27 +8,28 @@ public class IsUnique {
 	public static void main(String[] args) {
 		
 		IsUnique obj = new IsUnique();
-		int[] arr = new int[] {3,4,5,0,2,7,1,9};
+		int[] arr = new int[] {3,4,0,0,2,3,1,9};
 		
-		boolean flag = obj.isUnique(arr);
-		System.out.println(Arrays.toString(arr));
+		boolean flag = obj.isUniqueBitSet(arr);
+		System.out.println("\n"+Arrays.toString(arr));
 		System.out.println("Is unique? "+flag);
 	}
 
 	// using boolean array
 	private boolean isUnique(int[] arr) {
 		boolean[] bool = new boolean[10];
-
+		boolean flag = true;
 		for (int k = 0; k < arr.length; k++) {
 
 			int val = arr[k];
 			// value found
 			if (bool[val]) {
-				return false;
+				System.out.print(val+" ");	 //prints duplicate element
+				flag = false;
 			}
 			bool[val] = true;
 		}
-		return true;
+		return flag;
 	}
 	
 	// using BitSet (java.util.BitSet)
@@ -38,6 +39,7 @@ public class IsUnique {
 		BitSet bitSet = new BitSet(arr.length);
 		for (int k = 0; k < arr.length; k++) {
 			if (bitSet.get(arr[k])) {
+				System.out.print(arr[k]+" ");		//prints duplicate element  
 				flag = false;
 			} else {
 				bitSet.set(arr[k]);
