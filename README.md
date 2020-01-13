@@ -50,3 +50,4 @@ Chapter 16: Moderate
 
 16.21 Sum Swap
 
+16.24 Pairs with Sum
