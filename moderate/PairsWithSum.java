@@ -11,10 +11,10 @@ public class PairsWithSum {
 		int[] A = {4, 1, 2, 3, 0, 9, 8, 2};
 		int target = 9;
 		
-		String pairs = pair.findAllPairUsingList(A, target);
+	//	String pairs = pair.findAllPairUsingList(A, target);
 	
-	//	Arrays.sort(A);
-	//	String pairs = pair.findAllPairsUsingBinSearch(A, 0, A.length, target);
+		Arrays.sort(A);
+		String pairs = pair.findAllPairsUsingBinSearch(A, 0, A.length-1, target);
 		System.out.println(pairs);
 	}
 
@@ -31,24 +31,24 @@ public class PairsWithSum {
 		}
 		return sb.toString();
 	}
-	/*
+	
 	private String findAllPairsUsingBinSearch(int[] a, int start, int end, int target) {
 		StringBuilder sb = new StringBuilder();		
 		// now that array is sorted, can use binary search to find compliment
-		int mid = start + ( end - start )/ 2;
-		for(int i=start; i<end; i++) {
-			int complement = target-a[i];
-			
-			if (complement == a[mid]) {
-				sb.append(complement+","+ a[i]);
-				sb.append("\n");				
-			} else if(complement < a[mid]) {
-				findAllPairsUsingBinSearch(a, start, mid-1, target);
+		
+		while (start <= end) {
+			int s = a[start] + a[end];
+			if (s == target) {
+				sb.append(a[start] + "," + a[end]);
+				sb.append("\n");
+				start ++;
+				end --;
+			} else if (s < target) {
+				start ++;
 			} else {
-				findAllPairsUsingBinSearch(a, mid+1, end, target);
+				end --;
 			}
 		}
 		return sb.toString();
 	}
-	*/
 }
