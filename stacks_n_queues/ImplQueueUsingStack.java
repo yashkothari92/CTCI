@@ -22,6 +22,7 @@ public class ImplQueueUsingStack {
 
 		System.out.println(queue.dequeue());
 		System.out.println(queue.dequeue());
+		System.out.println("peeking: "+queue.peek());
 		System.out.println(queue.dequeue());
 		System.out.println(queue.dequeue());
 		System.out.println(queue.dequeue());
@@ -34,13 +35,22 @@ public class ImplQueueUsingStack {
 	}
 	
 	private int dequeue() {
+		moveElements();		
+		return s2.pop();
+	}
+
+	private int peek() {
+		moveElements();		
+		return s2.peek();
+	}
+
+	
+	private void moveElements() {
 		if(s2.isEmpty()) {
 			// push elements to s2 by popping off s1
 			while(!s1.isEmpty()) {
 				s2.add(s1.pop());
 			}
-		}
-		
-		return s2.pop();
+		}		
 	}
 }
