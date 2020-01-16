@@ -33,6 +33,13 @@ Chapter 2: Linked Lists
 
 2.8 Loop Detection
 
+Chapter 3: Stacks & Queues
+---------------------------
+3.2 StackMin
+
+3.4 Impl.queue using Stack
+
+
 Chapter 16: Moderate
 ---------------------
 
