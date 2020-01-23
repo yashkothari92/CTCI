@@ -39,6 +39,8 @@ Chapter 3: Stacks & Queues
 
 3.4 Impl.queue using Stack
 
+3.5 Sort Stack
+
 
 Chapter 16: Moderate
 ---------------------
