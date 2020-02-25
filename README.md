@@ -45,7 +45,7 @@ Chapter 3: Stacks & Queues
 Chapter 4: Trees & Graphs
 --------------------------
 4.1 Route Between Nodes
-
+4.2 Minimal Tree
 
 Chapter 16: Moderate
 ---------------------
