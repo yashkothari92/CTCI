@@ -42,6 +42,11 @@ Chapter 3: Stacks & Queues
 3.5 Sort Stack
 
 
+Chapter 4: Trees & Graphs
+--------------------------
+4.1 Route Between Nodes
+
+
 Chapter 16: Moderate
 ---------------------
 
