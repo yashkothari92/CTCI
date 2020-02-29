@@ -45,11 +45,13 @@ Chapter 3: Stacks & Queues
 
 Chapter 4: Trees & Graphs
 --------------------------
-4.1 Route Between Nodes
+[4.1 Route Between Nodes](https://github.com/yashkothari92/CTCI/blob/master/tree_n_graphs/RouteBetweenTwoNodes.java)
 
-4.2 Minimal Tree from sorted array
+[4.2 Minimal Tree from sorted array](https://github.com/yashkothari92/CTCI/blob/master/tree_n_graphs/MinimalTree.java)
 
-4.3 Create Linked-list of Depth D (if Binary Tree has depth 4; 4 linked-list should have nodes of each level)
+[4.3 Create Linked-list of Depth D (if Binary Tree has depth 4; 4 linked-list should have nodes of each level)](https://github.com/yashkothari92/CTCI/blob/master/tree_n_graphs/LinkedListOfDepth.java)
+
+[4.4 Validate if Tree is balanced](https://github.com/yashkothari92/CTCI/blob/master/tree_n_graphs/BalancedTrees.java)
 
 Chapter 16: Moderate
 ---------------------
