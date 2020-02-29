@@ -45,7 +45,10 @@ Chapter 3: Stacks & Queues
 Chapter 4: Trees & Graphs
 --------------------------
 4.1 Route Between Nodes
-4.2 Minimal Tree
+
+4.2 Minimal Tree from sorted array
+
+4.3 Create Linked-list of Depth D (if Binary Tree has depth 4; 4 linked-list should have nodes of each level)
 
 Chapter 16: Moderate
 ---------------------
