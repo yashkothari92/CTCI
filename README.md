@@ -2,7 +2,8 @@
 
 Chapter 1: Arrays & Strings
 ---------------------------
-1.1 IsUnique - check if string is unique or not
+[1.1 IsUnique - check if string is unique or not](https://github.com/yashkothari92/CTCI/blob/master/arrays_n_strings/IsUnique.java)
+
 
 1.2 Check if one string is Permutation of another string
 
