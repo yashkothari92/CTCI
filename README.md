@@ -56,18 +56,18 @@ Chapter 4: Trees & Graphs
 Chapter 16: Moderate
 ---------------------
 
-16.1 Number Swapper 
+[16.1 Number Swapper](https://github.com/yashkothari92/CTCI/blob/master/moderate/NumberSwapper.java)
 
-16.2 Frequency for given word in a book
+[16.2 Frequency for given word in a book](https://github.com/yashkothari92/CTCI/blob/master/moderate/WordFrequencies.java)
 
-16.6 Smallest Difference 
+[16.6 Smallest Difference](https://github.com/yashkothari92/CTCI/blob/master/moderate/SmallestDifference.java)
 
-16.8 English Integer
+[16.8 English Integer](https://github.com/yashkothari92/CTCI/blob/master/moderate/EnglishInt.java)
 
-16.15 MasterMind
+[16.15 MasterMind](https://github.com/yashkothari92/CTCI/blob/master/moderate/MasterMind.java)
 
-16.17 Contiguous Sequence
+[16.17 Contiguous Sequence](https://github.com/yashkothari92/CTCI/blob/master/moderate/ContiguousSequence.java)
 
-16.21 Sum Swap
+[16.21 Sum Swap](https://github.com/yashkothari92/CTCI/blob/master/moderate/SumSwap.java)
 
-16.24 Pairs with Sum
+[16.24 Pairs with Sum](https://github.com/yashkothari92/CTCI/blob/master/moderate/PairsWithSum.java)
