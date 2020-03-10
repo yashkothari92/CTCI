@@ -53,6 +53,8 @@ Chapter 4: Trees & Graphs
 
 [4.4 Validate if Tree is balanced](https://github.com/yashkothari92/CTCI/blob/master/tree_n_graphs/BalancedTrees.java)
 
+[4.6 Inorder Successor](https://github.com/yashkothari92/CTCI/blob/master/tree_n_graphs/InorderSuccessor.java)
+
 Chapter 16: Moderate
 ---------------------
 
