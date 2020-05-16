@@ -3,6 +3,8 @@ package linked_lists;
 // #1: Reverse 2nd half of list and compare it with 1st half of list
 // #2: Stack => same approach 'runner'; push 1st half to stack, pop and match with 2nd half
 // #3: use Recursion
+
+// Approach #1 is used during below implementation.
 public class PalindromLinkedList {
 
 	Node secondHalf;
@@ -17,15 +19,13 @@ public class PalindromLinkedList {
 		custll.add('A');
 		custll.add('R');
 		Node custllHead = custll.getHead(); 
-				
-		palin.reverseLinkedList(custllHead);
-		/*
-		  while(prev != null) { 
-		  		System.out.print(prev.data+ " ");
-		  		prev = prev.next; 
-		  }
-		*/ 
 		
+		// return true when linkedlist is empty or has single element (E.g. [], [1])
+		if(custllHead == null || custllHead.next == null) {
+			System.out.println("Is Palindrome:"+ "true");
+		}
+		
+		palin.reverseLinkedList(custllHead);
 		boolean result = palin.isPalindrome(custllHead, palin.secondHalf);
 		System.out.println("Is Palindrome:"+result);
 	}
@@ -63,10 +63,10 @@ public class PalindromLinkedList {
 		}
 		
 		secondHalf = slow;
-		prevOfSlow.next = null; // prev_of_slow_ptr.next = midNode (in case of odd)
+		prevOfSlow.next = null; // prevOfSlow.next = midNode (in case of odd)
+		
 		// reverse 2nd half of list
 		secondHalf = reverse();		
-		
 		return secondHalf;
 	}
 
