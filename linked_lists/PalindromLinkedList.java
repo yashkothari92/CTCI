@@ -5,9 +5,7 @@ package linked_lists;
 // #3: use Recursion
 public class PalindromLinkedList {
 
-	Node second_half;
-	Node mid_Node;
-	Node prev_of_slow_ptr;
+	Node secondHalf;
 	
 	public static void main(String[] args) {
 		PalindromLinkedList palin = new PalindromLinkedList();
@@ -28,7 +26,7 @@ public class PalindromLinkedList {
 		  }
 		*/ 
 		
-		boolean result = palin.isPalindrome(custllHead, palin.second_half);
+		boolean result = palin.isPalindrome(custllHead, palin.secondHalf);
 		System.out.println("Is Palindrome:"+result);
 	}
 
@@ -49,30 +47,32 @@ public class PalindromLinkedList {
 	private Node reverseLinkedList(Node head) {
 		Node slow = head;
 		Node fast = head;
+		Node midNode;
+		Node prevOfSlow;
 		
 		while(fast != null && fast.next != null) {
-			prev_of_slow_ptr = slow;
+			prevOfSlow = slow;
 			slow = slow.next;
 			fast = fast.next.next;
 		}
 		
 		// if size is odd
 		if(fast != null) {
-			mid_Node = slow;		// mid_node need to be ignored for odd sized LinkedLists
+			midNode = slow;		// midNode need to be ignored for odd sized LinkedLists
 			slow = slow.next;
 		}
 		
-		second_half = slow;
-		prev_of_slow_ptr.next = null; // prev_of_slow_ptr.next = mid_Node (in case of odd)
+		secondHalf = slow;
+		prevOfSlow.next = null; // prev_of_slow_ptr.next = midNode (in case of odd)
 		// reverse 2nd half of list
-		second_half = reverse();		
+		secondHalf = reverse();		
 		
-		return second_half;
+		return secondHalf;
 	}
 
 	private Node reverse() {
 
-		Node current = second_half;
+		Node current = secondHalf;
 		Node prev = null;
 		Node next;
 		
