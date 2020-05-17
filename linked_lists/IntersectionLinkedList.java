@@ -35,45 +35,44 @@ public class IntersectionLinkedList {
 			System.out.println("Oops...No matching intersect node found! ");
 	}
 	
-	
-	public static Node findIntersectNode(Node head1, Node head2, int custllSize, int custll2Size) {
-		// if same length, increment both and return when both points to same Node 		==> O(n)
-		if(custllSize == custll2Size) {
-			while(head1 != null && head2 != null) {
-				if(head1.data == head2.data) {
-					return head1;
-				}
-				head1 = head1.next;
-				head2 = head2.next;
+	private static Node findIntersectNode(Node l1Head, Node l2Head) {
+		// get the size of both the linkedlists
+		int l1Size = findSize(l1Head);
+		int l2Size = findSize(l2Head);
+		
+		int diff = 0;
+		// advance bigger linkedlist by {diff} steps
+		if (l1Size < l2Size) {
+			diff = l2Size - l1Size;
+			while(diff > 0) {
+				l2Head = l2Head.next;
+				diff --;
 			}
 		} else {
-			int m = Math.abs(custllSize - custll2Size);
-			//int bigger = m > 0 ? custllSize : custll2Size;
-			
-			// advance bigger linked list by 'm', and later increment both together ==> O(m) [where m<n]
-			if(custllSize > custll2Size) {
-				while (m > 0) {
-					head1 = head1.next;
-					m--;
-				}
-			} else {
-				while (m > 0) {
-					head2 = head2.next;
-					m--;
-				}
-			}
-			
-			// now both linked list, points to same position						==>	O(n-m)
-			
-			while(head1 != null && head2 != null) {
-				if(head1.data == head2.data) {
-					return head1;
-				}
-				head1 = head1.next;
-				head2 = head2.next;
+			diff = l1Size - l2Size;
+			while(diff > 0) {
+				l1Head = l1Head.next;
+				diff --;
 			}
 		}
+		
+		while (l1Head != null && l2Head != null) {
+			if(l1Head == l2Head) {	//instead of checking its value/data, check its reference
+				return l1Head;
+			}
+			l1Head = l1Head.next;
+			l2Head = l2Head.next;
+		}
+		
 		return null;
 	}
-	
+
+	private static int findSize(Node lHead) {
+		int counter = 0;
+		while(lHead != null) {
+			counter++;
+			lHead = lHead.next;
+		}
+		return counter;
+	}
 }
