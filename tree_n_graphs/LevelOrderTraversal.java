@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.ArrayList;
 
 public class LevelOrderTraversal {
 
@@ -26,37 +27,43 @@ public class LevelOrderTraversal {
 		int d = findDepth(lot.root);
 	//	System.out.println(d);
 		
-		printLevelOrderTraversal(lot.root);
+		List<List<Integer>> lists = printLevelOrderTraversal(lot.root);
+		if(lists != null){
+       			System.out.println(lists);
+       		}
 	}
 
-	private static void printLevelOrderTraversal(TreeNode root) {
-		//List<TreeNode> queue = new LinkedList<>();
+	private static List<List<Integer>> printLevelOrderTraversal(TreeNode root) {
+		if(root == null){
+	            return new ArrayList<List<Integer>>();
+	     	}
+		List<List<Integer>> listOfList = new ArrayList<List<Integer>>();
+		ArrayList<Integer> list = null;
+		
 		Queue<TreeNode> queue = new LinkedList<>();
 		queue.add(root);
-	//	System.out.println(root.data);
 		
 		while(true) {
 			int nodeCount = queue.size();
 			if(nodeCount == 0)
 				break;
 			
+			list = new ArrayList<>();
 			while(nodeCount > 0) {
 				TreeNode n = queue.poll();
-				System.out.print(n.data+" ");
+				list.add(n.data);
 				if (n.left != null) {
 					queue.add(n.left);
-				//	System.out.print(n.left.data+" ");
 				}
 				
 				if (n.right != null) {
 					queue.add(n.right);
-				//	System.out.print(n.right.data+" ");
 				}
 				nodeCount --;
 			}	
-			System.out.println();
+			listOfList.add(list);
 		}
-		
+		return listOfList;
 	}
 
 	private static int findDepth(TreeNode root) {
