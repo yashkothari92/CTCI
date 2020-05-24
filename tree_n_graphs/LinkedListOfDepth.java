@@ -21,7 +21,7 @@ public class LinkedListOfDepth {
 		tree.root.left.left.right = new TreeNode(5);		
 		tree.root.right.left.left = new TreeNode(11);
 		
-		int d = findDepth(tree.root);
+		int d = findMaxDepth(tree.root);
 		System.out.println("Depth : "+d);
 		
 		createLinkedListsOfSDepth(tree.root);
@@ -79,16 +79,26 @@ public class LinkedListOfDepth {
 		}
 	}
 
-	private static int findDepth(TreeNode root) {
+	private static int findMaxDepth(TreeNode root) {
 		if (root == null) {
 			return 0;
 		}
 		
 		int lh = findDepth(root.left);
-	//	System.out.println(root.data+ "-> lh "+lh);
-		int rh = findDepth(root.right);
-	//	System.out.println(root.data+" -> rh "+rh);
-		
+		int rh = findDepth(root.right);		
 		return Math.max(lh, rh)+1;
+	}
+	
+	// Min Depth: # of nodes along the shortesh path from root node down to leaf node.
+	private static int findMinDepth(TreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		
+		int lh = findDepth(root.left);
+		int rh = findDepth(root.right);		
+		int result = Math.min(lh, rh)+1;
+		
+		return (result == 1) ? Math.max(lh, rh)+1 : result;
 	}
 }
