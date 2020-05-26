@@ -3,27 +3,26 @@ package stacks_n_queues;
 import java.util.Iterator;
 import java.util.Stack;
 
+// push, push, push, push
 public class StackMin {
 	Stack<Integer> s1 = new Stack<Integer>();
 	Stack<Integer> sMin = new Stack<Integer>();
 
 	public static void main(String[] args) {
-		StackMin minStack = new StackMin();
-		minStack.push(12);
-		minStack.push(23);
-		minStack.push(2);
-		
-		minStack.traverse();
-		
-		int minElem = minStack.min();
-		System.out.println("\nMinimum Element: "+minElem);
-		
-		int popeed = minStack.pop();
-		System.out.println("\nPopped element: "+popeed);
-		
-	//	minStack.traverse();		
-		minElem = minStack.min();
-		System.out.println("\nMinimum Element: "+minElem);
+		StackMin obj = new StackMin();
+		obj.push(512);
+		obj.push(-1024);
+		obj.push(-1024);
+		obj.push(512);
+		obj.pop();
+		int param_2 = obj.getMin();
+		System.out.println(param_2);
+		obj.pop();
+		int param_3 = obj.getMin();
+		System.out.println(param_3);
+		obj.pop();
+		int param_4 = obj.getMin();
+		System.out.println(param_4);
 	}
 	
 	private void traverse() {
@@ -40,12 +39,16 @@ public class StackMin {
 		s1.add(i);
 	}
 	
-	private int pop() {
-		if(sMin.peek() == s1.peek()) {
-			sMin.pop();
+	private void pop() {
+		int a = s1.peek();
+		int b = sMin.peek();
+
+		if(a == b) {
+		    s1.pop();
+		    sMin.pop();
+		} else {
+		    s1.pop();
 		}
-		
-		return s1.pop();
 	}
 	
 	private int min() {
